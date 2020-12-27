@@ -1,0 +1,275 @@
+:root {
+  --primary-color: #00587a;
+  --secondary-color: #05676e;
+  --tertiary-color: #489c79;
+  --text-color: #fff;
+  --animation-primary-color: #edc655;
+  --animation-secondary-color: #fcffad;
+  --animation-tertiary-color: #f76414;
+  --background-color: #00587a; 
+  --button-font-color: white;
+  --logo-font-color: #00587a;
+  --border-box-color: purple;
+  --grid-box-color: yellow;
+  --footer-color: black;
+  --sun-color: black;
+  --sun-color-2: purple;
+  --sun-color-3: white;
+}
+  
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  a {
+    color: var(--primary-color); 
+  }
+
+  a:hover, a:focus {
+    text-decoration: none;
+  }
+
+  .button, button {
+    /* overwrites browser defaults and resets the border */
+    border: none;
+    display: inline-block;
+    /* takes the font from the outer container */
+    font-family: inherit;
+    /* styles the button */
+    background-color: var(--background-color);
+    color: var(--button-font-color);
+    font-family: 'Dancing Script', cursive;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    /* width of the border, type, color */
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    transition-duration: 0.9s;
+    transition-property: opacity;
+  }
+  
+  button:hover,
+  button:focus,
+  .button:hover,
+  .button:focus {
+    /* lets the mouse appear as a hand when hovering over the button */
+    cursor: pointer;
+    /* reduces the opacity of the button to 80% */
+    opacity: 0.8;
+  }
+
+  .navigation-list__item--active {
+    text-decoration: none;
+  }
+
+  /* page-header */
+  .page-header {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid black; 
+    align-items: center;
+  }
+
+  .page-header_item {
+    flex: 0 1 1100px;
+  }
+  .page-header_logo{
+    margin: 0;
+    padding-left: 10px;
+    font-size: 30px;
+    color: var(--logo-font-color) 
+  }  
+  .page-header_item:last-child {
+    flex-grow: 1;
+    text-align: right;
+  }  
+
+
+
+/* page-body */
+  .page-body {
+    margin: 0 10px;
+    min-height: 75%;
+  }
+
+  .page-body_item {
+    text-align: center;
+    text-decoration: none;
+  }
+
+  .page-profile{
+    padding-left: 350px;
+    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
+  }   
+
+/* contact.html   */
+.page-body_contact-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 40px;
+}  
+
+.page-body_form-contact {
+  width: 350px;
+  padding: 10px;
+  border: 1px solid var(--border-box-color);
+  text-align: left;
+}
+
+.page-body_form-contact input,
+.page-body_form-contact textarea {
+  width: 100%;
+}
+
+.contact-button {
+  width: 100%;
+}
+
+
+  .navigation-list {
+    list-style-type: none;
+  }
+
+  .navigation-list li {
+    display: inline-block;
+    margin-left: 15px;
+  }
+
+  .profile {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .profile__portrait {
+    float: left;
+    width: 250px;
+    margin-right: 40px;
+    border-radius: 50%;
+  }
+
+    .grid__item {
+    border: 1px solid var(--grid-box-color);
+      border-radius: inherit;
+      font-size: small;
+      padding-left: 10px ;
+      padding-bottom: 5px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-gap: 20px;
+    }
+
+    .grid__item:last-child {
+      grid-column-start: 3;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 3;
+    }
+
+/* footer */
+  .page-footer {
+    display: inline-block;
+    clear: both;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+/* media */
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+
+  .page-profile {
+    display: flex;
+    text-align: center;
+    flex-direction: inherit;
+  }
+
+  .page-profile_image{
+    display: flex;
+  }
+
+  .page-header {
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+  }
+  .page-header__logo {
+    text-align: center;
+  }
+  .page-header .page-header__item .navigation-list {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .page-body__item .berlin-illustration {
+    height: 280px;
+  }
+}
+
+
+@keyframes color-change {
+  0% {
+    fill: #edc655;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #f76414;
+  }
+}
+
+/* sun */
+.sun {
+  animation: 4s color-change infinite alternate linear;
+}
+
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+
+.cloud-front {
+  animation: 30s cloud-move infinite alternate linear;
+}
+
